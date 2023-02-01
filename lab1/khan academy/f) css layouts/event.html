@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Project: Event invite</title>
-        <style>
-            
-        </style>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Project: Event invite</title>
+    <style>
+        body {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,23,121,1) 35%, rgba(0,228,255,1) 100%);
+            font-family: Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            background-color: rgb(12, 20, 83);
+            width: auto;
+            margin: 0px;
+            padding: 6px;
+            border-bottom-right-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+        #details-box{
+            background-color: rgb(12,20,83);
+            width: 16%;
+            padding: 6px;
+            border-radius: 5%;
+            position: absolute;
+        }
+        .heading{
+            text-align: center;
+        }
+        #details p{
+            text-align: left;
+            border-bottom: 2px solid white;
+        }
+        .email-link{
+            color:white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
         
-        <h1>You're invited!</h1>
-        <h2>To AlmaLoud: Grand Show!</h2>
-        
-        <p>The details:</p>
-        <ul>
-            <li></li>
-        </ul>
-        
-    </body>
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>YOU'RE INVITED!</h1>
+        <h2>To AlmaLoud: Grand Show</h2>
+    </header>
+    <div id="details-box">
+        <div class="heading">
+            <h3>DETAILS</h3>
+        </div>
+        <div id="details">
+            <p>WHERE?: KBTU, Tole-Bi 59</p>
+            <p>WHEN?: 24.02.2023</p>
+            <p>HOW?: <a class="email-link">link to write an email</a></p>
+        </div>
+    </div>
+</body>
+
 </html>
