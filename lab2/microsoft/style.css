@@ -8,8 +8,34 @@ body{
     color:black;
     background-color: white;
 }
+
+
+/*===== header ======*/
+header{
+    font-size: 13px;
+}
 .inner__header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 80px;
+}
+.header__leftside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo{
+    height: 23px;
+}
+.logo{
+    padding: 16px 6px 10px;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+}
+.nav button{
+    display: inline;
 }
