@@ -1,0 +1,103 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 24px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*===== header ======*/
+
+.header{
+    background-color: rgb(40, 40, 40);
+    color: rgb(106, 106, 106);
+    padding: 10px 0 10px;
+}
+.header span{
+    margin-left: 40px;
+}
+
+/*===== body =======*/
+.body__container{
+    padding: 0 100px 0 350px;
+}
+
+.heading{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.task__adder{
+    display: flex;
+    flex-direction: row;
+    padding: 0 150px 0 100px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.input, #add__btn{
+    padding: 10px 10px; 
+}
+
+.input{
+    margin-right: 30px;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 3px;
+    width: 100%;
+}
+
+.input::placeholder{
+    color: rgb(160, 160, 160);
+    font-size: 18px;
+}
+
+#add__btn{
+    color: white;
+    border: none;
+    background-color: rgb(89, 126, 200);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#task__list{
+    padding: 6px 10px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.task{
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task__text{
+    width: 100%;
+    text-align: left;
+}
+
+.checkbox{
+    height: 20px;
+    margin-right: 16px;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+.del__icon{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
