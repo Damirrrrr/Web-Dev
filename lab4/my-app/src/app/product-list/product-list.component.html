@@ -1,0 +1,31 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products" class="product1">
+
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.price" class="dff">
+    Цена: {{ product.price }}
+  </p>
+  <img [src] = product.img width="211" height="150">
+  <p *ngIf="product.display" class="dff">
+    Дисплей: {{ product.display }}
+  </p>
+  <p *ngIf="product.process" class="dff">
+    Процессор: {{ product.process }}
+  </p>
+  
+
+  <button type="button" (click)="share(product.url)">
+    Share
+  </button>
+  
+  <app-product-alerts
+    [product]="product" 
+    (notify)="onNotify()">
+  </app-product-alerts>
+
+</div>
