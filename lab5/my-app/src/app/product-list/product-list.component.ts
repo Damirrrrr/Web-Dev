@@ -1,15 +1,36 @@
-import { Component } from '@angular/core';
-
-import { laptops } from '../products';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product, products } from '../products';
+const DELETED_KEY = 'deleted';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
 
-  products = [...laptops];
+  constructor(
+    private route: ActivatedRoute
+  ) {
+    const deletedStr = localStorage.getItem(DELETED_KEY);
+    
+    if (deletedStr) {
+      this.deleted = JSON.parse(deletedStr);
+    }
+  }
+
+  products = [...products];
+  deleted: number[] = []
+
+  ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    const productCFromRoute = (routeParams.get('productsCategory'));
+
+    this.products = products.filter(p => p.category === productCFromRoute && !this.deleted.find(id => id === p.id))
+    console.log(this.deleted)
+  }
+
 
   share(url: string) {
     var message = window.prompt()
@@ -19,6 +40,20 @@ export class ProductListComponent {
 
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
+  }
+
+  counterLike(p: Product) {
+    p.like++;
+    console.log(p.like)
+  }
+
+  DeleteItem(id : number) {
+    this.deleted.push(id)
+
+    localStorage.setItem(DELETED_KEY, JSON.stringify(this.deleted));
+    console.log(localStorage)
+
+    this.ngOnInit()
   }
 }
 

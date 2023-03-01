@@ -2,3 +2,6 @@
     display: flex;
     flex-wrap: wrap;
 }
+.like__count{
+    font-size: 20px;
+}

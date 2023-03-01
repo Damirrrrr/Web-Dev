@@ -1,9 +1,10 @@
-<h2>Laptops</h2>
+<h2>Products</h2>
 <div class="item">
   <div *ngFor="let product of products" class="product1">
 
     <h3>
-      <a [title]="product.name + ' details'">
+      <a [title]="product.name + ' details'"
+         [routerLink]="['/products', product.id]">
         {{ product.name }}
       </a>
     </h3>
@@ -11,22 +12,23 @@
       Цена: {{ product.price }}
     </p>
     <img [src] = product.img width="211" height="150">
-    <p *ngIf="product.display" class="dff">
-      Дисплей: {{ product.display }}
+    <p *ngIf="product.description" class="dff">
+      Описание: {{product.description}}
     </p>
-    <p *ngIf="product.process" class="dff">
-      Процессор: {{ product.process }}
-    </p>
-    
-  
-    <button type="button" (click)="share(product.url)">
-      Share
-    </button>
-    
-    <app-product-alerts
-      [product]="product" 
-      (notify)="onNotify()">
-    </app-product-alerts>
-  
+    <div class="buttons">
+        <button type="button" (click)="share(product.url)">
+          Share
+        </button>
+        
+        <app-product-alerts
+        [product]="product" 
+        (notify)="onNotify()">
+        </app-product-alerts>
+
+        <button (click) = "DeleteItem(product.id)" class="delete">Delete</button>
+        
+        <button target="_blank" (click) = "counterLike(product)"> Like </button> 
+        <p class="like__count">{{product.like}} ❤️</p>
+    </div>
   </div>
 </div>
