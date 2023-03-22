@@ -8,6 +8,7 @@ export interface Product {
   url: string;
   category: string;
   like: number;
+  numOfComments?: number;
 }
 
 export const products = [
@@ -113,13 +114,14 @@ export const products = [
   },
   {
     id: 10,
-    name: 'Ноутбук Apple MacBook Air 13 MLY33 черный',
+    name: 'Apple Iphone',
     price: 628327,
     description: 'Дисплей - 13.6 дюйм,\nПроцессор - Apple M2 8-Core',
     img: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hc0/h3d/52679174357022/apple-macbook-air-13-mly33-chernyi-105933768-1.jpg',
     url: 'https://kaspi.kz/shop/p/apple-macbook-air-13-mly33-chernyi-105933768/',
-    category: "Laptops",
+    category: "Smartphones",
     rating: 5,
     like: 0,
+    numOfComments: 5,
   },
 ];

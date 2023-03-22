@@ -24,8 +24,5 @@ export class ProductItemComponent {
   returnLike(){
     return this.product?.like
   }
-
-  likes() {
-    
-  }
+  
 }
