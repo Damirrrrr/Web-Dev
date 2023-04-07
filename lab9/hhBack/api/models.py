@@ -11,7 +11,7 @@ class Company(models.Model):
         verbose_name_plural = 'Companies'
 
     def __str__(self):
-        return self.name
+        return f'{self.id}: {self.name}'
 
     def to_json(self):
         return {
@@ -33,7 +33,7 @@ class Vacancy(models.Model):
         verbose_name_plural = 'Vacancies'
 
     def __str__(self):
-        return self.name
+        return f'{self.id}: {self.name}'
 
     def to_json(self):
         return {
@@ -41,5 +41,5 @@ class Vacancy(models.Model):
             'name': self.name,
             'description': self.description,
             'salary': self.salary,
-            'company': self.company
+            'company': self.company.name
         }
